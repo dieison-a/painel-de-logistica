@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstração de um painel SaaS de logística com dados fictícios.">
+  <title>Trackline — Operações</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-icon">t</span> trackline<span class="brand-dot">.</span></a>
+    <p class="side-label">ESPAÇO DE TRABALHO</p>
+    <a class="nav-link active" href="#operacao"><span>▦</span> Operação</a>
+    <a class="nav-link" href="#integracoes"><span>⌘</span> Integrações <b class="live-dot"></b></a>
+    <div class="side-bottom"><span class="avatar">DL</span><div><strong>Demo Loja</strong><small>Ambiente fictício</small></div></div>
+  </aside>
+  <main id="operacao">
+    <header class="page-head"><div><p class="crumb">OPERAÇÕES / VISÃO GERAL</p><h1>Bom dia, equipe.</h1><p class="subhead">Acompanhe pedidos e conexões em um só lugar.</p></div><span class="date-pill">AMBIENTE DEMONSTRATIVO</span></header>
+    <section class="stats" aria-label="Indicadores simulados">
+      <article><span>Pedidos no período</span><strong>128</strong><small>+12% <em>vs. semana anterior</em></small></article>
+      <article><span>Em trânsito</span><strong>34</strong><small class="neutral">Atualização simulada</small></article>
+      <article><span>Precisam de atenção</span><strong class="attention">06</strong><small class="neutral">2 aguardam integração</small></article>
+    </section>
+    <section class="order-panel" aria-labelledby="orders-title">
+      <div class="panel-head"><div><h2 id="orders-title">Pedidos recentes</h2><p>Dados fictícios para demonstração</p></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar pedido ou destino" aria-label="Buscar pedido ou destino"></label></div>
+      <div class="tabs" role="group" aria-label="Filtrar pedidos">
+        <button class="tab selected" data-status="all" aria-pressed="true">Todos</button>
+        <button class="tab" data-status="Em trânsito" aria-pressed="false">Em trânsito</button>
+        <button class="tab" data-status="Atenção" aria-pressed="false">Atenção</button>
+        <button class="tab" data-status="Entregue" aria-pressed="false">Entregues</button>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Pedido</th><th>Destino</th><th>Integração</th><th>Situação</th><th>Previsão</th></tr></thead><tbody id="orders"></tbody></table></div>
+      <p id="empty" class="empty" hidden>Nenhum pedido corresponde à busca.</p>
+      <p id="result-count" class="result-count" aria-live="polite"></p>
+    </section>
+    <footer id="integracoes">Trackline é um protótipo de portfólio. Nenhum pedido ou transportadora é real.</footer>
+  </main>
+</body>
+</html>
